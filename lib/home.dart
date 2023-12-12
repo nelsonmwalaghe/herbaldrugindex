@@ -23,7 +23,10 @@ class _HomeState extends State<Home> {
     final Size size = MediaQuery.of(context).size;
     _imageIdx = Random().nextInt(Config.splashScreenImageList.length);
     return SafeArea(
-      child: Scaffold(
+      child: Scaffold( drawer: Drawer(
+        shadowColor: Colors.black.withOpacity(.2),
+
+      ),
         backgroundColor: Colors.white,
         extendBodyBehindAppBar: true,
         appBar: AppBar(
