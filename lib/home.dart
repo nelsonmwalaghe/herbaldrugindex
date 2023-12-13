@@ -23,7 +23,14 @@ class _HomeState extends State<Home> {
     final Size size = MediaQuery.of(context).size;
     _imageIdx = Random().nextInt(Config.splashScreenImageList.length);
     return SafeArea(
-      child: Scaffold( drawer: Drawer(
+      child: Scaffold(floatingActionButton:FloatingActionButton(onPressed: () {
+        showSearch(context: context, delegate: SearchHerbaldrug());
+      },isExtended: true,
+        child: Icon(Icons.search_outlined),
+        
+        
+         ),
+        drawer: Drawer(
         shadowColor: Colors.black.withOpacity(.2),
 
       ),
@@ -48,15 +55,8 @@ class _HomeState extends State<Home> {
               )
             ],
           ),
-          actions: [
-            IconButton(
-              icon: Icon(Icons.search),
-              onPressed: () {
-                showSearch(context: context, delegate: SearchHerbaldrug());
-              },
-            )
-          ],
-        ),
+
+          ),
         body: Container(padding: EdgeInsets.all(5),
           decoration: BoxDecoration(
             image: DecorationImage(
